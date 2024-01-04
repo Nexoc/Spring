@@ -28,7 +28,7 @@ public class TestSpring {
         // applicationContext should be closed
         context.close();
         //todo 2nd lesson is done
-         */
+
 
         // todo 3rd lesson start
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
@@ -41,6 +41,8 @@ public class TestSpring {
         // applicationContext should be closed
         context.close();
         //todo 3rd lesson is done
+
+         */
 
 
 
