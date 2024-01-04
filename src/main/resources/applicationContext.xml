@@ -12,4 +12,8 @@
         <constructor-arg value="Marat"/>
     </bean>
 
+    <bean id="musicBean"
+          class="at.first.app.PopMusic">
+    </bean>
+
 </beans>
