@@ -67,8 +67,6 @@ public class TestSpring {
         );
         ClassicalMusic classicalMusic = context.getBean("musicBeanClassic", ClassicalMusic.class);
         context.close();
-         */
-
         // todo 7th lesson
         // @Component -> through Annotations
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
@@ -79,18 +77,24 @@ public class TestSpring {
        PopMusic popMusic = context.getBean("popMusic", PopMusic.class);
        System.out.println(rockMusic.getSong());
        System.out.println(popMusic.getSong());
-
        context.close();
+        // todo 8th lesson
+       // @Autowired. Внедрение зависимостей (Dependency Injection)
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+                "applicationContext.xml"
+        );
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        musicPlayer.playMusic();
+        context.close();
+         */
 
-
-
-
-
-
-
-
-
-
+        //todo 8th lesson
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+                "applicationContext.xml"
+        );
+        Computer computer = context.getBean("computer", Computer.class);
+        System.out.println(computer);
+        context.close();
 
     }
 }

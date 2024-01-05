@@ -1,38 +1,38 @@
 package at.first.app;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class MusicPlayer {
-    private List<Music> musicList = new ArrayList<>();
-    private String name;
-    private int volume;
 
-    public String getName() {return name;}
+    // @Autowired
+    //private Music music;
 
-    public void setName(String name) { this.name = name;}
+    private  ClassicalMusic classicalMusic;
+    private RockMusic rockMusic;
 
-    public int getVolume() { return volume; }
-
-    public void setVolume(int volume) { this.volume = volume; }
-
-    // IoC = Inversion of control
-    public MusicPlayer(List<Music> musicList){
-        this.musicList = musicList;
+    @Autowired
+    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
+        this.classicalMusic = classicalMusic;
+        this.rockMusic = rockMusic;
     }
 
-    public MusicPlayer() {}
+    /*
+    @Autowired
+    public MusicPlayer(Music music) {this.music = music;}
+     */
 
-    // <property name="music" ref="musicBean"/>
-    // Spring make setMusic to "music"
-    public void setMusic(List<Music> musicList){
-        //this.music = music;
-        this.musicList = musicList;
+    /*@Autowired
+    public void setMusic(Music music) {
+        this.music = music;
+    }     */
+
+    public String  playMusic () {  return "Playing: " + classicalMusic.getSong() +
+             " and " + rockMusic.getSong();
     }
 
-    public void playMusic(){
-        for (Music music : musicList) {
-            System.out.println("Playing: " + music.getSong());
-        }
-    }
 }
