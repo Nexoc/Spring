@@ -41,9 +41,30 @@ public class TestSpring {
         // applicationContext should be closed
         context.close();
         //todo 3rd lesson is done
-
          */
 
+        // todo 4rd lesson
+        //  scope="prototype" or "singleton"
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+                "applicationContext.xml"
+        );
+        MusicPlayer firstMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        MusicPlayer secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+
+        firstMusicPlayer.playMusic();
+        boolean comparison = firstMusicPlayer == secondMusicPlayer;
+        System.out.println(firstMusicPlayer.getName());
+        System.out.println(firstMusicPlayer.getVolume());
+        System.out.println(comparison);
+
+        firstMusicPlayer.setVolume(10);
+        System.out.println(firstMusicPlayer.getVolume());
+        System.out.println(secondMusicPlayer.getVolume());
+
+
+        // applicationContext should be closed
+        context.close();
+        // todo 4rd lesson done
 
 
 

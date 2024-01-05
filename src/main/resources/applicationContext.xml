@@ -26,7 +26,8 @@
     </bean>
 
     <bean id="musicPlayer"
-          class="at.first.app.MusicPlayer">
+          class="at.first.app.MusicPlayer"
+            scope="prototype">
         <property name="music">
             <list value-type="at.first.app.Music">
                 <ref bean="musicBeanClassic"/>
