@@ -23,9 +23,9 @@
 
     <bean id="musicBeanClassic"
           class="at.first.app.ClassicalMusic"
-            init-method="doMyinit"
+            init-method="doMyInit"
             destroy-method="doMyDestroy"
-            scope="prototype">
+            factory-method="getClassicalMusic">
     </bean>
 
     <bean id="musicPlayer"

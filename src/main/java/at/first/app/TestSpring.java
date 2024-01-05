@@ -69,7 +69,15 @@ public class TestSpring {
         context.close();
          */
 
+        // todo 6th lesson
+        // Factory Method
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+                "applicationContext.xml"
+        );
+        ClassicalMusic classicalMusic = context.getBean("musicBeanClassic", ClassicalMusic.class);
 
+        // applicationContext should be closed
+        context.close();
 
 
 

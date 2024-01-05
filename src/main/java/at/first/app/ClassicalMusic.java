@@ -2,7 +2,14 @@ package at.first.app;
 
 public class ClassicalMusic implements Music{
 
-    public void doMyinit() {
+    private ClassicalMusic() {};
+
+    public static ClassicalMusic getClassicalMusic() {
+        System.out.println("Factory Method");
+        return new ClassicalMusic();
+    }
+
+    public void doMyInit() {
         System.out.println("Doing my initialization");
     }
 
