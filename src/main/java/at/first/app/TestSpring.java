@@ -15,7 +15,6 @@ public class TestSpring {
         System.out.println(testBean.getName());
         // applicationContext should be closed
         context.close();
-
         // todo 2nd lesson start
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml"
@@ -24,9 +23,7 @@ public class TestSpring {
         Music music= context.getBean("musicBean", Music.class);
         MusicPlayer musicPlayer = new MusicPlayer(music);
         musicPlayer.playMusic();
-        // applicationContext should be closed
         context.close();
-
         // todo 3rd lesson start
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml"
@@ -35,9 +32,7 @@ public class TestSpring {
         musicPlayer.playMusic();
         System.out.println(musicPlayer.getName());
         System.out.println(musicPlayer.getVolume());
-        // applicationContext should be closed
         context.close();
-
         // todo 4rd lesson
         //  scope="prototype" or "singleton"
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
@@ -53,9 +48,7 @@ public class TestSpring {
         firstMusicPlayer.setVolume(10);
         System.out.println(firstMusicPlayer.getVolume());
         System.out.println(secondMusicPlayer.getVolume());
-        // applicationContext should be closed
         context.close();
-
         // todo 5th lesson
         // init destroy
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
@@ -67,20 +60,27 @@ public class TestSpring {
         System.out.println(classicalMusic2.getSong());
         // applicationContext should be closed
         context.close();
-         */
-
         // todo 6th lesson
         // Factory Method
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml"
         );
         ClassicalMusic classicalMusic = context.getBean("musicBeanClassic", ClassicalMusic.class);
-
-        // applicationContext should be closed
         context.close();
+         */
 
+        // todo 7th lesson
+        // @Component -> through Annotations
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+                "applicationContext.xml"
+        );
+       RockMusic rockMusic = context.getBean("musicBeanRock", RockMusic.class);
+       // if we don't write name of the component it will be named as Class name
+       PopMusic popMusic = context.getBean("popMusic", PopMusic.class);
+       System.out.println(rockMusic.getSong());
+       System.out.println(popMusic.getSong());
 
-
+       context.close();
 
 
 
