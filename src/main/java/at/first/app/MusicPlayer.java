@@ -22,6 +22,5 @@ public class MusicPlayer {
 
     public String playMusic() {
         return "Playing: " + music1.getSong() + " and " + music2.getSong();
-
     }
 }
