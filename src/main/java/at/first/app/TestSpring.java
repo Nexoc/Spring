@@ -15,7 +15,6 @@ public class TestSpring {
         System.out.println(testBean.getName());
         // applicationContext should be closed
         context.close();
-        // todo 1 lesson done
 
         // todo 2nd lesson start
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
@@ -27,8 +26,6 @@ public class TestSpring {
         musicPlayer.playMusic();
         // applicationContext should be closed
         context.close();
-        //todo 2nd lesson is done
-
 
         // todo 3rd lesson start
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
@@ -40,8 +37,6 @@ public class TestSpring {
         System.out.println(musicPlayer.getVolume());
         // applicationContext should be closed
         context.close();
-        //todo 3rd lesson is done
-         */
 
         // todo 4rd lesson
         //  scope="prototype" or "singleton"
@@ -50,21 +45,37 @@ public class TestSpring {
         );
         MusicPlayer firstMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
         MusicPlayer secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-
         firstMusicPlayer.playMusic();
         boolean comparison = firstMusicPlayer == secondMusicPlayer;
         System.out.println(firstMusicPlayer.getName());
         System.out.println(firstMusicPlayer.getVolume());
         System.out.println(comparison);
-
         firstMusicPlayer.setVolume(10);
         System.out.println(firstMusicPlayer.getVolume());
         System.out.println(secondMusicPlayer.getVolume());
-
-
         // applicationContext should be closed
         context.close();
-        // todo 4rd lesson done
+
+        // todo 5th lesson
+        // init destroy
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+                "applicationContext.xml"
+        );
+        ClassicalMusic classicalMusic = context.getBean("musicBeanClassic", ClassicalMusic.class);
+        ClassicalMusic classicalMusic2 = context.getBean("musicBeanClassic", ClassicalMusic.class);
+        System.out.println(classicalMusic.getSong());
+        System.out.println(classicalMusic2.getSong());
+        // applicationContext should be closed
+        context.close();
+         */
+
+
+
+
+
+
+
+
 
 
 

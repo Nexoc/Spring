@@ -22,7 +22,10 @@
     </bean>
 
     <bean id="musicBeanClassic"
-          class="at.first.app.ClassicalMusic">
+          class="at.first.app.ClassicalMusic"
+            init-method="doMyinit"
+            destroy-method="doMyDestroy"
+            scope="prototype">
     </bean>
 
     <bean id="musicPlayer"
