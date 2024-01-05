@@ -86,9 +86,22 @@ public class TestSpring {
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
         musicPlayer.playMusic();
         context.close();
-         */
+
 
         //todo 8th lesson
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+                "applicationContext.xml"
+        );
+        Computer computer = context.getBean("computer", Computer.class);
+        System.out.println(computer);
+        context.close();
+         */
+        // todo Homework
+        // 1. Classical 3 songs and Rock 3 Songs
+        // 2. Music player can get Cl & Rock
+        // 3. Create Enum with 2 style Cl & Rock
+        // 4. method playMusic() can get Enum
+        // 5. method playMusic with random from Cl | Rock + from 3 songs
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml"
         );

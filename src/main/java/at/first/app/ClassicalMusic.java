@@ -3,6 +3,9 @@ package at.first.app;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class ClassicalMusic implements Music{
 
@@ -22,7 +25,11 @@ public class ClassicalMusic implements Music{
     }
 
     @Override
-    public String getSong() {
-        return "hungarian Rhapsody";
+    public List<String> getSong() {
+        List<String> songs = new ArrayList<>(3);
+        songs.add("1 Cl");
+        songs.add("2 Cl");
+        songs.add("3 Cl");
+        return songs;
     }
 }
