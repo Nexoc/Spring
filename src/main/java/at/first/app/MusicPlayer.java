@@ -2,6 +2,7 @@ package at.first.app;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -12,8 +13,21 @@ import java.util.Random;
 public class MusicPlayer {
 
     private Music musicClassic;
-    private  Music musicPop;
-    private  Music musicRock;
+    private Music musicPop;
+    private Music musicRock;
+
+    @Value("${musicPlayer.name}")
+    private String name;
+    @Value("${musicPlayer.volume}")
+    private int volume;
+
+    public String getName() {
+        return name;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
 
     Random random = new Random();
 

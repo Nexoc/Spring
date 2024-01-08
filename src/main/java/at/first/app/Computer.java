@@ -19,7 +19,6 @@ public class Computer {
 
     @Override
     public String toString() {
-        int indexOfSong = random.nextInt(3);
         if (id == 1) {
             return "Computer " + id + " " +  musicPlayer.playMusic(MusicGenre.ROCK);
         } else if (id == 2) {
